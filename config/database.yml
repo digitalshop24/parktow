@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgis
+  encoding: unicode
+  username: <%= ENV['database_username'] %>
+  password: <%= ENV['database_password'] %>
+  pool: 5
+development:
+  <<: *default
+  database: parktow_development
+test:
+  <<: *default
+  database: parktow_test
+production:
+  <<: *default
+  database: parktow_production
