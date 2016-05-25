@@ -6,7 +6,7 @@ working_directory "/var/www/apps/#{app_name}/current"
 shared_path = "/var/www/apps/#{app_name}/shared"
 
 listen "/var/www/apps/#{app_name}/socket/.unicorn.sock", backlog: 64
-listen 8092, tcp_nopush: true
+listen 8093, tcp_nopush: true
 timeout 30
 
 pid "/var/www/apps/#{app_name}/run/unicorn.pid"
