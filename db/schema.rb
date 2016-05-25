@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20160520143702) do
   enable_extension "postgis"
 
   create_table "devices", force: :cascade do |t|
-    t.string   "token"
+    t.string   "token",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20160520143702) do
   create_table "evacuators", force: :cascade do |t|
     t.geography "location",   limit: {:srid=>4326, :type=>"point", :geographic=>true}
     t.boolean   "active",                                                              default: true,                  null: false
-    t.datetime  "last_seen",                                                           default: '2016-05-20 15:25:38', null: false
+    t.datetime  "last_seen",                                                           default: '2016-05-23 16:40:43', null: false
     t.datetime  "created_at",                                                                                          null: false
     t.datetime  "updated_at",                                                                                          null: false
   end

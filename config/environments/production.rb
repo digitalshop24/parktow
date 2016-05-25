@@ -1,19 +1,3 @@
-module ActiveRecord
-   module ConnectionHandling
-     class MergeAndResolveDefaultUrlConfig
-       private
-       def config
-         @raw_config.dup.tap do |cfg|
-           if url = ENV['DATABASE_URL']
-             cfg[@env] ||= {}
-             cfg[@env]["url"] ||= url.try(:gsub, "postgres", "postgis")
-           end
-         end
-       end
-     end
-   end
-end
-
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
