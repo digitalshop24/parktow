@@ -1,4 +1,4 @@
-app_name = 'skoda-hockey'
+app_name = 'parktow'
 worker_processes 4
 
 working_directory "/var/www/apps/#{app_name}/current"
